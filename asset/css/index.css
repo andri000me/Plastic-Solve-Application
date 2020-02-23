@@ -11,3 +11,17 @@
     height: 150px;
     background-color: cadetblue;
 }
+.classutama2-namauser{
+    height: 30px;
+    background-color: orange;
+}
+.classutama2-judul{
+    height: 50px;
+    background-color:white;
+}
+.classutama2-judul h1{
+    font-size: 25px;
+}
+.btn {
+    margin-top: 10px;
+}
