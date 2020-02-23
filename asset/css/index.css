@@ -11,13 +11,17 @@
     height: 150px;
     background-color: cadetblue;
 }
-.form-halaman1{
-    display: flex;
-    justify-content: center;
+.classutama2-namauser{
+    height: 30px;
+    background-color: orange;
 }
-.form-halaman1 input[type=text]{
-    width: 100%;
+.classutama2-judul{
+    height: 50px;
+    background-color:white;
 }
-.form-halaman1 input[type=number]{
-    width: 100%;
+.classutama2-judul h1{
+    font-size: 25px;
+}
+.btn {
+    margin-top: 10px;
 }
