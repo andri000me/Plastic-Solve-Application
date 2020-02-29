@@ -1,6 +1,6 @@
 .classutama{
     height: auto;
-    background-image: url("../image/077584035cd72b756dadeb35888041e3.jpg");
+    background-color: green;
     padding: 0px;
 }
 .classutama2{
@@ -31,10 +31,11 @@
     display: flex;
     margin-top: 25px;
     justify-content: center;
+    color: white;
 }
 .classutama2-form img{
     width: 200px;
     height: 200px;
     margin-bottom: 10px;
 }
-    
+
