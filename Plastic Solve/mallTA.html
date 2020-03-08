@@ -9,29 +9,37 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Document</title>
 </head>
-<body>
-    <div class = "classutama col-12 col-sm-12">
-        <div class = "classutama2 col-12 col-sm-6">
-            <div class = "classutama2-namauser col-12 col-sm-12">
-                <h6> Kristianti </h6>
-            </div>
-            <div class = "classutama2-judul col-12 col-sm-12"> 
-                <div class="text-center">
-                    <h1> Scan Barcode </h1>
-                </div>
-            </div>
-            <div class = "classutama2-form row col-12 col-sm-12">
-                <img src="./asset/image/frame.png" alt="">
-                <div class = "text-center">
-                    <div class="text-center">
-                    </div><a><h5>Arahkan Kamera Ke Layar</a></h5>
-                </div>
-            </div>
-            <div class = "text-center">
-                <a class="btn btn-info" href="halamanpilihan1.html" role="button"> Ambil Gambar </a>
+<body class="classutama">
+    <div class="row">
+        <div class = "classutama2-namauser col-12 col-sm-12">
+            <h6> Kristianti </h6>
+        </div>
+        <div class = "classutama2-judul col-12 col-sm-12"> 
+            <div class="text-center">
+                <h1> Scan Barcode </h1>
             </div>
         </div>
-        <div class = "classutama3 col-12 col-sm-6">
+    </div>
+    <div class = "row justify-content-center">
+        <div class = "classutama2 col-lg-6 col-sm-12">
+            <div class="bar-code-container">
+                <video
+                    id="video"
+                    width="300"
+                    height="300"
+                >
+                </video>
+                <div class="border">
+                    <img src="./asset/image/frame.png" alt="">
+                </div>
+                <div class="text-center">
+                    <div class="text-center">
+                        <a><h5>Arahkan Kamera Ke Layar</h5></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- <div class = "classutama3 col-12 col-sm-6">
             <div class="classutama3-menu col-12 col-sm-12">
                 <div class="navbar">
                     <a class="active" href="#"><i class="fa fa-fw fa-home"></i></a> 
@@ -39,11 +47,46 @@
                     <a href="#"><i class="fa fa-fw fa-user"></i></a>
                   </div>
             </div>
-        </div>    
+        </div>     -->
         
     </div>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://unpkg.com/@zxing/library@latest"></script>
+    <script type="text/javascript">
+        window.addEventListener('load', () => {
+          const codeReader = new ZXing.BrowserQRCodeReader();
+
+          codeReader
+            .listVideoInputDevices()
+            .then(videoInputDevices => {
+                const firstDeviceId = videoInputDevices[0].deviceId;
+
+                codeReader
+                    .decodeOnceFromVideoDevice(firstDeviceId, 'video')
+                    .then(result => {
+                        var urlApi = result.text;
+
+                        fetch(urlApi)
+                            .then(response => {
+                                return response.json();
+                            })
+                            .then(totebag => {
+                                localStorage.setItem('idTotebag', totebag.id);
+                                localStorage.setItem('ukuranTotebag', totebag.ukuran);
+                                localStorage.setItem('hargaTotebag', totebag.harga);
+
+                                window.location.href = 'halamanpilihan1.html';
+                            })
+                            .catch(err => {
+                                console.log(err)
+                            })
+                    })
+                    .catch(err => console.error(err));
+            })
+            .catch(err => console.error(err));
+        });
+      </script>
 </body>
 </html>
