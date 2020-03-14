@@ -11,3 +11,13 @@
     height: 150px;
     background-color: cadetblue;
 }
+.form-halaman1{
+    display: flex;
+    justify-content: center;
+}
+.form-halaman1 input[type=text]{
+    width: 100%;
+}
+.form-halaman1 input[type=number]{
+    width: 100%;
+}
