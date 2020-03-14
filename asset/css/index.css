@@ -1,0 +1,40 @@
+.classutama{
+    height: auto;
+    background-image: url("../image/077584035cd72b756dadeb35888041e3.jpg");
+    padding: 0px;
+}
+.classutama2{
+    height: 609px;
+}
+.classutama3{
+    height: 60px;
+    position: fixed;
+    background-color: green;
+    bottom: 0px;
+}
+.classutama2-namauser{
+    height: 30px;
+    color: white;
+}
+.classutama2-judul{
+    height: 50px;
+    color: white;
+}
+.classutama2-judul h1{
+    font-size: 25px;
+}
+.btn {
+    margin-top: 10px;
+}
+
+.classutama2-form{
+    display: flex;
+    margin-top: 25px;
+    justify-content: center;
+}
+.classutama2-form img{
+    width: 200px;
+    height: 200px;
+    margin-bottom: 10px;
+}
+    
