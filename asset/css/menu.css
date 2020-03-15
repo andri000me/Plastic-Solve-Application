@@ -1,8 +1,13 @@
+html {
+  max-width: 100vw !important;
+  overflow-x: hidden !important;
+  overflow-y: scroll;
+}
+
 .navbar {
     width: 100%;
     overflow: auto;
   }
-
   
   .navbar a {
     float: left;

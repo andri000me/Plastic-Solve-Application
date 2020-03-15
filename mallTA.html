@@ -4,26 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="asset/css/index.css">
     <link rel="stylesheet" type="text/css" href="asset/css/menu.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Plastic Solve App</title>
 </head>
 <body class="classutama">
     <div class="row">
-        <div class = "classutama2-namauser col-12 col-sm-12">
+        <div class = "classutama2-namauser col-sm">
             <h4 id="username" style="font-size: small;"></h4>
         </div>
-        <div class = "classutama2-judul col-12 col-sm-12"> 
-            <div class="text-center">
-                <h1><b>Scan Barcode</b></h1>
+        <div class = "classutama2-judul col-sm"> 
+            <div id="title" style="font-family: mv boli; font-size: 30px;"class="text-center">
+                <b>Scan Barcode</b>
             </div>
         </div>
     </div>
     <div class = "row justify-content-center">
-        <div class="container" style="text-align: center">
-        <div class = "classutama2 col-lg-6 col-sm-12">
-            <div class="bar-code-container">
+        <div class="container" style="text-align: center; max-width: 100%;;">
+        <div class = "classutama2 col-sm">
+            <div class="bar-code-container mx-auto">
                 <video
                     id="video"
                     width="300"
@@ -34,8 +34,8 @@
                     <img src="./asset/image/frame.png" alt="">
                 </div>
                 <div class="text-center">
-                    <div class="text-center">
-                        <a><h5><i>Arahkan Kamera Ke QR CODE</i></h5></a>
+                    <div id="title" style="font-family: segoe print;" class="text-center">
+                        <a><h6><i><b>Arahkan Kamera Ke QR CODE</b></i></h6></a>
                     </div>
                 </div>
             </div>
@@ -56,38 +56,37 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script type="text/javascript" src="https://unpkg.com/@zxing/library@latest"></script>
     <script type="text/javascript">
-        window.addEventListener('load', () => {
-          const codeReader = new ZXing.BrowserQRCodeReader();
+         window.addEventListener('load', () => {
+           const codeReader = new ZXing.BrowserQRCodeReader();
+           codeReader
+             .listVideoInputDevices()
+             .then(videoInputDevices => {
+                 const firstDeviceId = videoInputDevices[0].deviceId;
 
-          codeReader
-            .listVideoInputDevices()
-            .then(videoInputDevices => {
-                const firstDeviceId = videoInputDevices[0].deviceId;
+                 codeReader
+                     .decodeOnceFromVideoDevice(firstDeviceId, 'video')
+                     .then(result => {
+                         var urlApi = result.text;
 
-                codeReader
-                    .decodeOnceFromVideoDevice(firstDeviceId, 'video')
-                    .then(result => {
-                        var urlApi = result.text;
+                         fetch(urlApi)
+                             .then(response => {
+                                 return response.json();
+                             })
+                             .then(totebag => {
+                                 localStorage.setItem('idTotebag', totebag.id);
+                                 localStorage.setItem('ukuranTotebag', totebag.ukuran);
+                                 localStorage.setItem('hargaTotebag', totebag.harga);
 
-                        fetch(urlApi)
-                            .then(response => {
-                                return response.json();
-                            })
-                            .then(totebag => {
-                                localStorage.setItem('idTotebag', totebag.id);
-                                localStorage.setItem('ukuranTotebag', totebag.ukuran);
-                                localStorage.setItem('hargaTotebag', totebag.harga);
-
-                                window.location.href = 'halamanpilihan1.html';
-                            })
-                            .catch(err => {
-                                console.log(err)
-                            })
-                    })
-                    .catch(err => console.error(err));
-            })
-            .catch(err => console.error(err));
-        });
+                                 window.location.href = 'halamanpilihan1.html';
+                             })
+                             .catch(err => {
+                                 console.log(err)
+                             })
+                     })
+                     .catch(err => console.error(err));
+             })
+             .catch(err => console.error(err));
+         });
       </script>
 </body>
 </html>
