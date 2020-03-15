@@ -1,34 +1,37 @@
 .classutama{
-    height: auto;
-    background-image: url("../image/077584035cd72b756dadeb35888041e3.jpg");
+    height: 100vh;
+    background-color: #cff1ef;
     padding: 0px;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 #username {
-    color: #ffffff;
+    color: black;
     font-size: 14px;
     margin: 40px 0;
 }
 
 #title {
-    color: #ffffff;
+    color: black;
     font-size: 20px;
 }
 
 .classutama2{
-    display: flex;
     justify-content: center;
 }
 .classutama3{
-    background-color: green;
+    background-color: #1eb2a6;
+    position: absolute;
+    left: 0;
+    bottom: 0;
 }
 .classutama2-namauser{
     height: 30px;
-    color: white;
+    color: black;
 }
 .classutama2-judul{
     height: 50px;
-    color: white;
+    color: black;
 }
 .classutama2-judul h1{
     font-size: 25px;
@@ -49,7 +52,7 @@
 }
 
 .bar-code-container {
-    background-color: #6BF060;
+    background-color: #1EB2A6;
     width: 300px;
     height: 300px;
     position: relative;
@@ -77,4 +80,8 @@
 
 #data-totebag table {
     box-sizing: border-box;
+}
+
+.text-center{
+    width: 300px;
 }

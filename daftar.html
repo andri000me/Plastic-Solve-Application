@@ -1,42 +1,55 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" type="text/css" href="asset/css/login.css">
-</head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="./asset/css/login.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <title>Plastic Solve App</title>
+
+  </head>
 <body>
-<center>
-  <h1> Daftar Akun </h1>
-</center>
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-6">
+        <div class="container" style="text-align: center">
+          <h1> Daftar Akun </h1>
         
-    <form action="/action_page.php" method="post">
-   <div class="container">
-    <label for="uname"><b>Username</b></label>
-    <input type="text" placeholder="Username" name="uname" required>
+        <form id="login">
+          <div class="container">
+            <label for="uname"><b>Username</b></label>
+            <input type="text" placeholder="Username" name="uname" id="username" required>
 
-    <label for="uname"><b>Email</b></label>
-    <input type="text" placeholder="Email" name="uname" required>
+            <label for="psw"><b>Email</b></label>
+            <input type="text" placeholder="Email" name="uname" id="email" required>
 
+            <label for="uname"><b>Password</b></label>
+            <input type="password" placeholder="Password" name="psw" id="password" required>
+            
+            <div class = "container" style="background-color:#1EB2A6">
+                  <button type="submit">
+                    Daftar
+                  </button>
+                  <!-- <a class="btn btn-info" href="halbelitotebag.html" role="button"> Masuk </a> -->
+              </div>
+                
+            </center>
+            
+                <label>
+              <input type="checkbox" checked="checked" name="remember"> Ingat Saya
+            </label>
+          </div>
 
-    <label for="psw"><b>Password</b></label>
-    <input type="password" placeholder="Password" name="psw" required>
-    
-    <center>
-      <div class = "container" style="background-color:#80DF00">
-<buttontype>
-          <a class="btn btn-info" href="halbelitotebag.html" role="button"> Daftar </a>
+          <div class="container" style="background-color:#f1f1f1">
+            <a class="btn btn-info" href="login.html" role="button"> Masuk </a>
+          </div>
+        </form>
       </div>
-         
-    </center>
-    
-        <label>
-      <a class="btn btn-info" href="login.html" role="button"> Masuk </a>
-    </label>
+    </div>
   </div>
 
-  <div class="container" style="background-color:#f1f1f1">
-  </div>
-</form>
-
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  <script src="./asset/js/login.js"></script>
 </body>
 </html>
