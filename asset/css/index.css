@@ -1,24 +1,37 @@
 .classutama{
-    height: auto;
-    background-image: url("../image/077584035cd72b756dadeb35888041e3.jpg");
+    height: 100vh;
+    background-color: #cff1ef;
     padding: 0px;
+    font-family: Arial, Helvetica, sans-serif;
 }
+
+#username {
+    color: black;
+    font-size: 14px;
+    margin: 40px 0;
+}
+
+#title {
+    color: black;
+    font-size: 20px;
+}
+
 .classutama2{
-    height: 609px;
+    justify-content: center;
 }
 .classutama3{
-    height: 60px;
-    position: fixed;
-    background-color: green;
-    bottom: 0px;
+    background-color: #1eb2a6;
+    position: absolute;
+    left: 0;
+    bottom: 0;
 }
 .classutama2-namauser{
     height: 30px;
-    color: white;
+    color: black;
 }
 .classutama2-judul{
     height: 50px;
-    color: white;
+    color: black;
 }
 .classutama2-judul h1{
     font-size: 25px;
@@ -37,4 +50,38 @@
     height: 200px;
     margin-bottom: 10px;
 }
-    
+
+.bar-code-container {
+    background-color: #1EB2A6;
+    width: 300px;
+    height: 300px;
+    position: relative;
+}
+
+.border {
+    position: absolute;
+    width: 280px;
+    height: 280px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+}
+
+.border img {
+    width: 100%;
+}
+
+#data-totebag {
+    background-color: #ffffff;
+    margin: 20px;
+    border-radius: 3px;
+}
+
+#data-totebag table {
+    box-sizing: border-box;
+}
+
+.text-center{
+    width: 300px;
+}
